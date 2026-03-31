@@ -12,7 +12,7 @@ int main() {
     scanf("%lf", &num2);
 
     // Input the operation
-    printf("Enter operator (+, -): ");
+    printf("Enter operator (+, -,*,/): ");
     scanf(" %c", &operator);  // Note the space before %c to consume any leftover newline
 
     // Perform calculation based on operator
@@ -22,6 +22,15 @@ int main() {
             break;
         case '-':
             printf("Result: %.2lf\n", num1 - num2);
+            break;
+	case '*':
+            printf("Result: %.2lf\n", num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0)
+                printf("Result: %.2lf\n", num1 / num2);
+            else
+                printf("Error: Division by zero!\n");
             break;
         default:
             printf("Invalid operator!\n");
