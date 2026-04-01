@@ -1,0 +1,50 @@
+From 4257125e5abe85aacc5d49c5a6e90564c2cf85b5 Mon Sep 17 00:00:00 2001
+From: shaunbabu2001 <smec@linux-embedded-dept.tail2b055b.ts.net>
+Date: Mon, 30 Mar 2026 19:32:36 +0530
+Subject: [PATCH 1/2] Calculator with addition and subtraction
+
+---
+ calculator/calc.c | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+ create mode 100644 calculator/calc.c
+
+diff --git a/calculator/calc.c b/calculator/calc.c
+new file mode 100644
+index 0000000..aa96412
+--- /dev/null
++++ b/calculator/calc.c
+@@ -0,0 +1,31 @@
++#include <stdio.h>
++
++int main() {
++    double num1, num2;
++    char operator;
++
++    // Input two numbers
++    printf("Enter first number: ");
++    scanf("%lf", &num1);
++
++    printf("Enter second number: ");
++    scanf("%lf", &num2);
++
++    // Input the operation
++    printf("Enter operator (+, -): ");
++    scanf(" %c", &operator);  // Note the space before %c to consume any leftover newline
++
++    // Perform calculation based on operator
++    switch(operator) {
++        case '+':
++            printf("Result: %.2lf\n", num1 + num2);
++            break;
++        case '-':
++            printf("Result: %.2lf\n", num1 - num2);
++            break;
++        default:
++            printf("Invalid operator!\n");
++    }
++
++    return 0;
++}
+-- 
+2.43.0
+

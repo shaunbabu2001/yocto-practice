@@ -1,0 +1,41 @@
+From c2fd7d963977f2cb73c189f804e6d10c045659ff Mon Sep 17 00:00:00 2001
+From: shaunbabu2001 <smec@linux-embedded-dept.tail2b055b.ts.net>
+Date: Mon, 30 Mar 2026 20:29:45 +0530
+Subject: [PATCH] multiplication and division added
+
+---
+ calculator/calc.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/calculator/calc.c b/calculator/calc.c
+index aa96412..d02f5c3 100644
+--- a/calculator/calc.c
++++ b/calculator/calc.c
+@@ -12,7 +12,7 @@ int main() {
+     scanf("%lf", &num2);
+ 
+     // Input the operation
+-    printf("Enter operator (+, -): ");
++    printf("Enter operator (+, -, *, /): ");
+     scanf(" %c", &operator);  // Note the space before %c to consume any leftover newline
+ 
+     // Perform calculation based on operator
+@@ -23,6 +23,15 @@ int main() {
+         case '-':
+             printf("Result: %.2lf\n", num1 - num2);
+             break;
++        case '*':
++            printf("Result: %.2lf\n", num1 * num2);
++            break;
++        case '/':
++            if(num2 != 0)
++                printf("Result: %.2lf\n", num1 / num2);
++            else
++                printf("Error: Division by zero is not allowed.\n");
++            break;
+         default:
+             printf("Invalid operator!\n");
+     }
+-- 
+2.43.0
+
